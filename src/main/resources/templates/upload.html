@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload Image to Blob</title>
+</head>
+<body>
+<h1>Upload Image</h1>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="title">Title:</label><br/>
+    <input type="text" name="title" id="title"/><br/>
+
+    <label for="description">Description:</label><br/>
+    <textarea name="description" id="description"></textarea><br/>
+
+    <label for="file">Image File:</label><br/>
+    <input type="file" name="file" id="file"/><br/><br/>
+
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>

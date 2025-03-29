@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Image Gallery from Blob</title>
+</head>
+<body>
+<h1>Image Gallery</h1>
+
+<div th:each="image : ${images}" style="margin-bottom: 20px;">
+    <img th:src="@{${image.filePath}}" alt="Image" style="max-width: 300px;"/>
+    <h3 th:text="${image.title}"></h3>
+    <p th:text="${image.description}"></p>
+    <p th:text="${image.uploadDate}"></p>
+
+    <!-- Delete Button -->
+    <form th:action="@{'/delete/' + ${image.id}}" method="get">
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+<a href="/upload">Upload New Image</a>
+</body>
+</html>
